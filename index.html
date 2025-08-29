@@ -38,6 +38,14 @@ permission from the copyright holder.
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Farina Tennis</title>
+  <!-- Apply stored theme preference before Tailwind loads -->
+  <script>
+    if (localStorage.getItem('theme') === 'dark') {
+      document.documentElement.classList.add('dark');
+    } else {
+      document.documentElement.classList.remove('dark');
+    }
+  </script>
   <!-- Tailwind CDN with class-based dark mode configuration -->
   <script>
     window.tailwind = window.tailwind || {};
@@ -46,12 +54,6 @@ permission from the copyright holder.
     };
   </script>
   <script src="https://cdn.tailwindcss.com"></script>
-  <!-- Apply stored theme preference as early as possible -->
-  <script>
-    if (localStorage.getItem('theme') === 'dark') {
-      document.documentElement.classList.add('dark');
-    }
-  </script>
 </head>
 <body class="bg-gray-50 text-gray-800 dark:bg-gray-900 dark:text-gray-100 transition-colors">
   <!-- Navbar -->
@@ -179,25 +181,24 @@ permission from the copyright holder.
   <script>
     const themeToggle = document.getElementById('theme-toggle');
     const themeIcon = document.getElementById('theme-toggle-icon');
-    const storedTheme = localStorage.getItem('theme');
 
-    if (storedTheme === 'dark') {
-      document.documentElement.classList.add('dark');
-    } else {
-      document.documentElement.classList.remove('dark');
-    }
-
-    function updateIcon() {
-      themeIcon.textContent = document.documentElement.classList.contains('dark') ? '☀️' : '🌙';
+    function setTheme(theme) {
+      if (theme === 'dark') {
+        document.documentElement.classList.add('dark');
+        themeIcon.textContent = '☀️';
+      } else {
+        document.documentElement.classList.remove('dark');
+        themeIcon.textContent = '🌙';
+      }
+      localStorage.setItem('theme', theme);
     }
 
     themeToggle.addEventListener('click', () => {
-      document.documentElement.classList.toggle('dark');
-      localStorage.setItem('theme', document.documentElement.classList.contains('dark') ? 'dark' : 'light');
-      updateIcon();
+      const newTheme = document.documentElement.classList.contains('dark') ? 'light' : 'dark';
+      setTheme(newTheme);
     });
 
-    updateIcon();
+    setTheme(localStorage.getItem('theme') || 'light');
   </script>
 </body>
 </html>
