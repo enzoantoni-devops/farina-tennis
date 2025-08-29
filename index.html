@@ -38,12 +38,10 @@ permission from the copyright holder.
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Farina Tennis</title>
-  <!-- Apply stored theme preference before Tailwind loads -->
+  <!-- Apply stored theme before Tailwind loads; default to light -->
   <script>
-    if (localStorage.getItem('theme') === 'dark') {
+    if (localStorage.theme === 'dark') {
       document.documentElement.classList.add('dark');
-    } else {
-      document.documentElement.classList.remove('dark');
     }
   </script>
   <!-- Tailwind CDN with class-based dark mode configuration -->
@@ -182,23 +180,20 @@ permission from the copyright holder.
     const themeToggle = document.getElementById('theme-toggle');
     const themeIcon = document.getElementById('theme-toggle-icon');
 
-    function setTheme(theme) {
-      if (theme === 'dark') {
-        document.documentElement.classList.add('dark');
-        themeIcon.textContent = '☀️';
-      } else {
-        document.documentElement.classList.remove('dark');
-        themeIcon.textContent = '🌙';
-      }
-      localStorage.setItem('theme', theme);
+    function updateIcon() {
+      themeIcon.textContent = document.documentElement.classList.contains('dark') ? '☀️' : '🌙';
     }
 
     themeToggle.addEventListener('click', () => {
-      const newTheme = document.documentElement.classList.contains('dark') ? 'light' : 'dark';
-      setTheme(newTheme);
+      document.documentElement.classList.toggle('dark');
+      localStorage.setItem(
+        'theme',
+        document.documentElement.classList.contains('dark') ? 'dark' : 'light'
+      );
+      updateIcon();
     });
 
-    setTheme(localStorage.getItem('theme') || 'light');
+    updateIcon();
   </script>
 </body>
 </html>
