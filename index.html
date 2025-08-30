@@ -56,14 +56,16 @@ permission from the copyright holder.
     try {
       if (localStorage.getItem('theme') === 'dark') {
         document.documentElement.classList.add('dark');
+      } else {
+        document.documentElement.classList.remove('dark');
       }
     } catch (_) {
       // localStorage may be unavailable (e.g. server-side rendering)
     }
 
-    // Configure Tailwind to use class-based dark mode
-    window.tailwind = window.tailwind || {};
-    window.tailwind.config = { darkMode: 'class' };
+    // Configure Tailwind to use class-based dark mode without relying on `window`
+    globalThis.tailwind = globalThis.tailwind || {};
+    globalThis.tailwind.config = { darkMode: 'class' };
   </script>
   <script src="https://cdn.tailwindcss.com"></script>
   <style>
