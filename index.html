@@ -52,24 +52,18 @@ permission from the copyright holder.
   <meta name="twitter:description" content="Clases de tenis personalizadas con el instructor Adrián Farina en Tucumán, Yerba Buena y Tafí Viejo. Clases particulares, grupales, infantiles y tenis delivery a domicilio.">
   <meta name="twitter:image" content="https://farinatennis.com.ar/img/6d77dd2cef3ce1348489e7000e9215be.jpg">
   <script>
-    // Apply stored theme before Tailwind loads to avoid flashing
+    // Default to light mode; enable dark if previously selected
     try {
-      const storedTheme = localStorage.getItem('theme');
-      if (storedTheme === 'dark') {
+      if (localStorage.getItem('theme') === 'dark') {
         document.documentElement.classList.add('dark');
-      } else {
-        document.documentElement.classList.remove('dark');
       }
     } catch (_) {
       // localStorage may be unavailable (e.g. server-side rendering)
     }
 
     // Configure Tailwind to use class-based dark mode
-    globalThis.tailwind = {
-      config: {
-        darkMode: 'class',
-      },
-    };
+    window.tailwind = window.tailwind || {};
+    window.tailwind.config = { darkMode: 'class' };
   </script>
   <script src="https://cdn.tailwindcss.com"></script>
   <style>
