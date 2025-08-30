@@ -54,17 +54,22 @@ permission from the copyright holder.
   <script>
     // Apply stored theme before Tailwind loads to avoid flashing
     try {
-      if (localStorage.getItem('theme') === 'dark') {
+      const storedTheme = localStorage.getItem('theme');
+      if (storedTheme === 'dark') {
         document.documentElement.classList.add('dark');
+      } else {
+        document.documentElement.classList.remove('dark');
       }
     } catch (_) {
       // localStorage may be unavailable (e.g. server-side rendering)
     }
   </script>
   <script>
-    tailwind.config = {
-      darkMode: 'class'
-    }
+    // Define Tailwind config without triggering ReferenceError in strict environments
+    window.tailwind = window.tailwind || {};
+    window.tailwind.config = {
+      darkMode: 'class',
+    };
   </script>
   <script src="https://cdn.tailwindcss.com"></script>
   <style>
