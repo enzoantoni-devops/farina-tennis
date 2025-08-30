@@ -52,6 +52,16 @@ permission from the copyright holder.
   <meta name="twitter:description" content="Clases de tenis personalizadas con el instructor Adrián Farina en Tucumán, Yerba Buena y Tafí Viejo. Clases particulares, grupales, infantiles y tenis delivery a domicilio.">
   <meta name="twitter:image" content="https://farinatennis.com.ar/img/6d77dd2cef3ce1348489e7000e9215be.jpg">
   <script>
+    // Apply stored theme before Tailwind loads to avoid flashing
+    try {
+      if (localStorage.getItem('theme') === 'dark') {
+        document.documentElement.classList.add('dark');
+      }
+    } catch (_) {
+      // localStorage may be unavailable (e.g. server-side rendering)
+    }
+  </script>
+  <script>
     tailwind.config = {
       darkMode: 'class'
     }
@@ -226,16 +236,13 @@ permission from the copyright holder.
     const themeToggle = document.getElementById('theme-toggle');
     const root = document.documentElement;
 
-    // Start in light mode unless a previous preference is stored
-    if (localStorage.theme === 'dark') {
-      root.classList.add('dark');
-    } else {
-      root.classList.remove('dark');
-    }
-
     themeToggle.addEventListener('click', () => {
       const isDark = root.classList.toggle('dark');
-      localStorage.theme = isDark ? 'dark' : 'light';
+      try {
+        localStorage.setItem('theme', isDark ? 'dark' : 'light');
+      } catch (_) {
+        // localStorage might be unavailable
+      }
     });
   </script>
   </body>
