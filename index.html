@@ -58,14 +58,21 @@ permission from the copyright holder.
 <body class="bg-gray-50 text-gray-800">
   <!-- Navbar -->
   <nav class="fixed w-full bg-white shadow-md z-50">
-    <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
+    <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center relative">
       <h1 class="text-2xl font-bold text-blue-600">Farina Tennis</h1>
-      <div class="space-x-6 hidden md:flex">
-        <a href="#about" class="hover:text-blue-600">¿Quién soy?</a>
-        <a href="#clases" class="hover:text-blue-600">Clases</a>
-        <a href="#delivery" class="hover:text-blue-600">Delivery</a>
-        <a href="#testimonials" class="hover:text-blue-600">Reseñas</a>
-        <a href="#contact" class="hover:text-blue-600">Contacto</a>
+      <div class="flex items-center">
+        <button id="menu-btn" class="md:hidden focus:outline-none">
+          <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M4 6h16M4 12h16M4 18h16"/>
+          </svg>
+        </button>
+        <div id="nav-links" class="hidden absolute top-full left-0 w-full bg-white flex-col space-y-2 md:flex md:static md:w-auto md:bg-transparent md:flex-row md:space-x-6 md:space-y-0 transition-all duration-300 ease-in-out">
+          <a href="#about" class="hover:text-blue-600">¿Quién soy?</a>
+          <a href="#clases" class="hover:text-blue-600">Clases</a>
+          <a href="#delivery" class="hover:text-blue-600">Delivery</a>
+          <a href="#testimonials" class="hover:text-blue-600">Reseñas</a>
+          <a href="#contact" class="hover:text-blue-600">Contacto</a>
+        </div>
       </div>
     </div>
   </nav>
@@ -191,5 +198,12 @@ permission from the copyright holder.
     <footer class="bg-gray-900 text-gray-300 py-8 text-center">
       <p>&copy; 2025 Farina Tennis. Todos los derechos reservados.</p>
     </footer>
+  <script>
+    const menuBtn = document.getElementById('menu-btn');
+    const navLinks = document.getElementById('nav-links');
+    menuBtn.addEventListener('click', () => {
+      navLinks.classList.toggle('hidden');
+    });
+  </script>
   </body>
   </html>
