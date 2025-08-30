@@ -51,6 +51,10 @@ permission from the copyright holder.
   <meta name="twitter:title" content="Farina Tennis">
   <meta name="twitter:description" content="Clases de tenis personalizadas con el instructor Adrián Farina en Tucumán, Yerba Buena y Tafí Viejo. Clases particulares, grupales, infantiles y tenis delivery a domicilio.">
   <meta name="twitter:image" content="https://farinatennis.com.ar/img/6d77dd2cef3ce1348489e7000e9215be.jpg">
+  <script>
+    globalThis.tailwind = globalThis.tailwind || {};
+    globalThis.tailwind.config = { darkMode: 'media' };
+  </script>
   <script src="https://cdn.tailwindcss.com"></script>
   <style>
     img {
@@ -68,23 +72,23 @@ permission from the copyright holder.
     }
   </style>
 </head>
-<body class="bg-gray-50 text-gray-800">
+<body class="bg-gray-50 text-gray-800 dark:bg-gray-900 dark:text-gray-100">
   <!-- Navbar -->
-  <nav class="fixed w-full bg-white shadow-md z-50">
+  <nav class="fixed w-full bg-white shadow-md z-50 dark:bg-gray-800 dark:text-gray-100">
     <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center relative">
-      <h1 class="text-2xl font-bold text-blue-600">Farina Tennis</h1>
+      <h1 class="text-2xl font-bold text-blue-600 dark:text-blue-400">Farina Tennis</h1>
       <div class="flex items-center">
         <button id="menu-btn" class="md:hidden focus:outline-none">
           <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
             <path d="M4 6h16M4 12h16M4 18h16"/>
           </svg>
         </button>
-        <div id="nav-links" class="hidden absolute top-full right-0 w-40 bg-white flex flex-col items-end space-y-2 pr-4 md:pr-0 md:flex md:static md:w-auto md:bg-transparent md:flex-row md:space-x-6 md:space-y-0 md:items-center transition-all duration-300 ease-in-out">
-          <a href="#about" class="hover:text-blue-600">¿Quién soy?</a>
-          <a href="#clases" class="hover:text-blue-600">Clases</a>
-          <a href="#delivery" class="hover:text-blue-600">Delivery</a>
-          <a href="#testimonials" class="hover:text-blue-600">Reseñas</a>
-          <a href="#contact" class="hover:text-blue-600">Contacto</a>
+        <div id="nav-links" class="hidden absolute top-full right-0 w-40 bg-white flex flex-col items-end space-y-2 pr-4 md:pr-0 md:flex md:static md:w-auto md:bg-transparent md:flex-row md:space-x-6 md:space-y-0 md:items-center transition-all duration-300 ease-in-out dark:bg-gray-800">
+          <a href="#about" class="hover:text-blue-600 dark:hover:text-blue-400">¿Quién soy?</a>
+          <a href="#clases" class="hover:text-blue-600 dark:hover:text-blue-400">Clases</a>
+          <a href="#delivery" class="hover:text-blue-600 dark:hover:text-blue-400">Delivery</a>
+          <a href="#testimonials" class="hover:text-blue-600 dark:hover:text-blue-400">Reseñas</a>
+          <a href="#contact" class="hover:text-blue-600 dark:hover:text-blue-400">Contacto</a>
         </div>
       </div>
     </div>
@@ -100,7 +104,7 @@ permission from the copyright holder.
       <p class="uppercase tracking-widest text-sm text-white mb-4">Bienvenido a</p>
       <img src="img/6d77dd2cef3ce1348489e7000e9215be.jpg" alt="Farina Tennis Logo" class="block mx-auto w-80 md:w-[500px] mb-4" loading="lazy">
       <p class="italic text-white text-lg md:text-xl mb-6">Desde 2022</p>
-      <a href="#contact" class="inline-block bg-blue-600 text-white px-8 py-3 rounded-full shadow hover:bg-blue-700 transition">Vení a jugar</a>
+      <a href="#contact" class="inline-block bg-blue-600 text-white px-8 py-3 rounded-full shadow hover:bg-blue-700 transition dark:bg-blue-700 dark:hover:bg-blue-600">Vení a jugar</a>
     </div>
 
     <!-- Player Image Overlay (centered at bottom) -->
@@ -114,34 +118,34 @@ permission from the copyright holder.
     <div>
       <h3 class="text-3xl font-bold mb-4">Hola, conocéme!</h3>
       <p class="mb-4">Soy <strong>Adrián Farina</strong>, instructor de tenis en el Club Atlético Tucumán. Aquí encontrarás un lugar para vos: clases personalizadas, grupales e infantiles.</p>
-      <p class="text-gray-600">Mi experiencia empezó en CeFIT y luego en Tafí Viejo en el Club Talleres. Hoy enseño en Yerba Buena en la Academia Aiziczon. El tenis me cambió la vida y quiero compartirlo con vos.</p>
+      <p class="text-gray-600 dark:text-gray-300">Mi experiencia empezó en CeFIT y luego en Tafí Viejo en el Club Talleres. Hoy enseño en Yerba Buena en la Academia Aiziczon. El tenis me cambió la vida y quiero compartirlo con vos.</p>
     </div>
     <img src="img/23ac6330a2d4a7bfef4c967fc20028b9.jpg" alt="Adrián Farina" class="mx-auto rounded-2xl shadow-lg" loading="lazy">
   </section>
 
   <!-- Clases -->
-  <section id="clases" class="bg-gray-100 py-20">
+  <section id="clases" class="bg-gray-100 py-20 dark:bg-gray-800">
     <div class="max-w-7xl mx-auto px-6 text-center">
       <h3 class="text-3xl font-bold mb-12">Hay un lugar para vos</h3>
       <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-        <div class="bg-white p-6 rounded-2xl shadow hover:shadow-lg transition text-center">
+        <div class="bg-white p-6 rounded-2xl shadow hover:shadow-lg transition text-center dark:bg-gray-700">
           <img src="img/553fc0c8413ea5182f7303c177c79c01.jpg" alt="Clases particulares" class="rounded-lg mb-4 mx-auto" loading="lazy">
-          <p class="text-gray-600 mb-2">Aprendé a tu ritmo</p>
+          <p class="text-gray-600 mb-2 dark:text-gray-300">Aprendé a tu ritmo</p>
           <h4 class="font-bold text-xl">Clases particulares</h4>
         </div>
-        <div class="bg-white p-6 rounded-2xl shadow hover:shadow-lg transition text-center">
+        <div class="bg-white p-6 rounded-2xl shadow hover:shadow-lg transition text-center dark:bg-gray-700">
           <img src="img/92b6d00d4eb06890ed2f3c34ee13ecc8.jpg" alt="Clases grupales" class="rounded-lg mb-4 mx-auto" loading="lazy">
-          <p class="text-gray-600 mb-2">Practica y jugá en equipo</p>
+          <p class="text-gray-600 mb-2 dark:text-gray-300">Practica y jugá en equipo</p>
           <h4 class="font-bold text-xl">Clases grupales</h4>
         </div>
-        <div class="bg-white p-6 rounded-2xl shadow hover:shadow-lg transition text-center">
+        <div class="bg-white p-6 rounded-2xl shadow hover:shadow-lg transition text-center dark:bg-gray-700">
           <img src="img/b81dd8063fe47f0a1bd58e3a6414641a.jpg" alt="Tenis femenino" class="rounded-lg mb-4 mx-auto" loading="lazy">
-          <p class="text-gray-600 mb-2">Ellas tienen su equipo</p>
+          <p class="text-gray-600 mb-2 dark:text-gray-300">Ellas tienen su equipo</p>
           <h4 class="font-bold text-xl">Tenis femenino</h4>
         </div>
-        <div class="bg-white p-6 rounded-2xl shadow hover:shadow-lg transition text-center">
+        <div class="bg-white p-6 rounded-2xl shadow hover:shadow-lg transition text-center dark:bg-gray-700">
           <img src="img/8e4c5a9050b07ff32de6a8544276a411.jpg" alt="Tenis infantil" class="rounded-lg mb-4 mx-auto" loading="lazy">
-          <p class="text-gray-600 mb-2">Los más pequeños también juegan</p>
+          <p class="text-gray-600 mb-2 dark:text-gray-300">Los más pequeños también juegan</p>
           <h4 class="font-bold text-xl">Tenis infantil</h4>
         </div>
       </div>
@@ -163,36 +167,36 @@ permission from the copyright holder.
         <img src="img/0f8b4e32f7db3f1cd93bcff93de45cf9.jpg" alt="raqueta y pelota" class="absolute -top-6 -right-6 w-24 h-24 object-cover rounded-xl shadow-lg" loading="lazy">
         <img src="img/b45b74c5167966eba84ad1fe7087c7bd.jpg" alt="jugador" class="absolute -bottom-6 -left-6 w-24 h-24 object-cover rounded-xl shadow-lg" loading="lazy">
         <img src="img/274cdbff3121151ada839fa04d76bf70.jpg" alt="clase de tenis" class="absolute -bottom-6 -right-6 w-24 h-24 object-cover rounded-xl shadow-lg" loading="lazy">
-          <p class="absolute -bottom-24 right-0 bg-white/90 p-4 text-sm shadow-md max-w-[250px] comment">El tiempo ya no es excusa, agarrá la raqueta y animate a vivir una experiencia de tenis confortable y extendida.</p>
+          <p class="absolute -bottom-24 right-0 bg-white/90 dark:bg-gray-800/90 p-4 text-sm shadow-md max-w-[250px] comment">El tiempo ya no es excusa, agarrá la raqueta y animate a vivir una experiencia de tenis confortable y extendida.</p>
       </div>
     </section>
 
   <!-- Testimonials -->
-  <section id="testimonials" class="bg-gray-100 py-20">
+  <section id="testimonials" class="bg-gray-100 py-20 dark:bg-gray-800">
     <div class="max-w-5xl mx-auto px-6 text-center">
       <h3 class="text-3xl font-bold mb-12">Reseñas de Google</h3>
       <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-        <div class="bg-white p-6 rounded-2xl shadow comment">
+        <div class="bg-white p-6 rounded-2xl shadow comment dark:bg-gray-700">
           <p class="italic">“Estoy muy contenta con el Profe Adrián estoy mejorando día a día además es muy atento con los pequeños infantes para enseñar agradecida de él.”</p>
           <p class="mt-4 font-semibold">Andrea Ponticelli</p>
         </div>
-        <div class="bg-white p-6 rounded-2xl shadow comment">
+        <div class="bg-white p-6 rounded-2xl shadow comment dark:bg-gray-700">
           <p class="italic">“Excelente las clases para los más peques.”</p>
           <p class="mt-4 font-semibold">Javier Díaz</p>
         </div>
-        <div class="bg-white p-6 rounded-2xl shadow comment">
+        <div class="bg-white p-6 rounded-2xl shadow comment dark:bg-gray-700">
           <p class="italic">“Excelente las clases del Profe Farina. Muy profesional y responsable. Lo recomiendo 100%.”</p>
           <p class="mt-4 font-semibold">Guido Albarracín</p>
         </div>
-        <div class="bg-white p-6 rounded-2xl shadow comment">
+        <div class="bg-white p-6 rounded-2xl shadow comment dark:bg-gray-700">
           <p class="italic">“Muy buen lugar para empezar sobre todo, lindo deporte y buenas clases!”</p>
           <p class="mt-4 font-semibold">Camila Saavedra Gil</p>
         </div>
-        <div class="bg-white p-6 rounded-2xl shadow comment">
+        <div class="bg-white p-6 rounded-2xl shadow comment dark:bg-gray-700">
           <p class="italic">“Excelente profe, buena onda. Me motiva mucho a ser mejor, no presiona, pero exige los ejercicios a hacer. Sus clases son muy completas. Súper recomendable.”</p>
           <p class="mt-4 font-semibold">Enzo Antoni</p>
         </div>
-        <div class="bg-white p-6 rounded-2xl shadow comment">
+        <div class="bg-white p-6 rounded-2xl shadow comment dark:bg-gray-700">
           <p class="italic">“Llegué sin saber nada de tenis y gracias a Adrián terminé sacando en la segunda clase. Me explicó cómo posicionarme desde los pies hasta la cabeza. Excelente, con paciencia, transmite pasión.”</p>
           <p class="mt-4 font-semibold">Micaela Vera</p>
         </div>
@@ -203,12 +207,12 @@ permission from the copyright holder.
   <!-- Contact -->
   <section id="contact" class="max-w-7xl mx-auto px-6 py-20 text-center">
     <h3 class="text-3xl font-bold mb-6">¿Listo para jugar?</h3>
-      <p class="mb-6 text-gray-800">Contactame y reservá tu lugar en la cancha.</p>
-    <a href="mailto:adrian@farinatennis.com.ar" class="bg-blue-600 text-white px-6 py-3 rounded-full shadow hover:bg-blue-700 transition">Quiero agendar una clase</a>
+      <p class="mb-6 text-gray-800 dark:text-gray-300">Contactame y reservá tu lugar en la cancha.</p>
+    <a href="mailto:adrian@farinatennis.com.ar" class="bg-blue-600 text-white px-6 py-3 rounded-full shadow hover:bg-blue-700 transition dark:bg-blue-700 dark:hover:bg-blue-600">Quiero agendar una clase</a>
   </section>
 
   <!-- Footer -->
-    <footer class="bg-gray-900 text-gray-300 py-8 text-center">
+    <footer class="bg-gray-900 text-gray-300 py-8 text-center dark:bg-black dark:text-gray-400">
       <p>&copy; 2025 Farina Tennis. Todos los derechos reservados.</p>
     </footer>
   <script>
