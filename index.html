@@ -63,12 +63,12 @@ permission from the copyright holder.
     } catch (_) {
       // localStorage may be unavailable (e.g. server-side rendering)
     }
-  </script>
-  <script>
-    // Define Tailwind config without triggering ReferenceError in strict environments
-    window.tailwind = window.tailwind || {};
-    window.tailwind.config = {
-      darkMode: 'class',
+
+    // Configure Tailwind to use class-based dark mode
+    globalThis.tailwind = {
+      config: {
+        darkMode: 'class',
+      },
     };
   </script>
   <script src="https://cdn.tailwindcss.com"></script>
