@@ -224,8 +224,18 @@ permission from the copyright holder.
       navLinks.classList.toggle('hidden');
     });
     const themeToggle = document.getElementById('theme-toggle');
+    const root = document.documentElement;
+
+    // Start in light mode unless a previous preference is stored
+    if (localStorage.theme === 'dark') {
+      root.classList.add('dark');
+    } else {
+      root.classList.remove('dark');
+    }
+
     themeToggle.addEventListener('click', () => {
-      document.documentElement.classList.toggle('dark');
+      const isDark = root.classList.toggle('dark');
+      localStorage.theme = isDark ? 'dark' : 'light';
     });
   </script>
   </body>
